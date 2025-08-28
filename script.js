@@ -20,11 +20,11 @@
 
     // ==================== GAME STATE ====================
     let secretCode = [];
-    let timer = 60;
+    let timer = 60;//time
     let attempts = 0;
-    const maxAttempts = 6;
+    const maxAttempts = 6;//attempts
     let intervalId = null;
-    const BOOT_MS = 7000; // Boot sequence duration
+    const BOOT_MS = 7000; 
 
     // ==================== MATRIX RAIN ====================
     function createWaterfallMatrix(){
@@ -205,4 +205,5 @@
       gameUI.classList.remove('hidden');
       // Start with boot every time
       startBoot();
+
     });

@@ -66,10 +66,16 @@
     });
 
     // ==================== GAME CORE ====================
-    function genSecret(){
-      // 4-digit code, digits 0-9, can repeat
-      return Array.from({length:4}, ()=> Math.floor(Math.random()*10));
-    }
+  function genSecret(){
+  const digits = [0,1,2,3,4,5,6,7,8,9];
+  const secret = [];
+  while(secret.length < 4){
+    const randIndex = Math.floor(Math.random() * digits.length);
+    secret.push(digits.splice(randIndex,1)[0]);
+  }
+  return secret;
+}
+
 
     function resetBoard(){ boardEl.innerHTML = ''; }
 
@@ -207,3 +213,4 @@
       startBoot();
 
     });
+
